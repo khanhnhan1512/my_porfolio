@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import Image from 'next/image'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { aboutData } from '@/lib/constants'
@@ -48,12 +49,17 @@ export default function AboutSection() {
       <div data-animate className="mb-12 h-1 w-16 rounded bg-accent opacity-0" />
 
       <div className="grid gap-12 md:grid-cols-2">
-        {/* Photo placeholder */}
+        {/* Avatar */}
         <div data-animate className="flex items-center justify-center opacity-0">
           <div className="relative size-64 overflow-hidden rounded-2xl border-2 border-accent/20 md:size-80">
-            <div className="flex size-full items-center justify-center bg-card text-6xl">
-              👤
-            </div>
+            <Image
+              src="/images/avatar.jpg"
+              alt="Nhan Nguyen"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 256px, 320px"
+              priority
+            />
           </div>
         </div>
 
