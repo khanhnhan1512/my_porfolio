@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { socialLinks, email } from '@/lib/constants'
+import SocialIcon from '@/components/ui/SocialIcon'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -229,9 +230,11 @@ export default function ContactSection() {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-lg border border-border bg-card px-5 py-3 text-sm font-medium text-muted transition-all hover:border-accent/50 hover:text-accent"
+                  aria-label={link.name}
+                  className="flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-3 text-sm font-medium text-muted transition-all hover:border-accent/50 hover:text-accent"
                 >
-                  {link.name}
+                  <SocialIcon icon={link.icon} />
+                  <span>{link.name}</span>
                 </a>
               ))}
             </div>
