@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 3D Portfolio Website
+
+An interactive 3D portfolio website built for a data science student, featuring particle animations, floating geometry, and scroll-driven interactions.
+
+## Tech Stack
+
+- **Framework**: Next.js 15 (App Router, TypeScript)
+- **3D**: React Three Fiber + drei
+- **Animation**: GSAP + Lenis + Framer Motion
+- **Styling**: Tailwind CSS v4
+- **Deployment**: Vercel
+
+## Features
+
+- Interactive 3D particle field hero section
+- 3D spherical skills tag cloud with category filtering
+- Project cards with CSS 3D tilt effect
+- Scroll-triggered timeline for experience/education
+- Contact form with EmailJS integration
+- GPU-tier aware rendering (fallbacks for mobile/low-end)
+- Smooth scroll with Lenis + GSAP ScrollTrigger
+- SEO optimized with Open Graph meta tags
+- Vercel Analytics + Speed Insights
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+git clone https://github.com/khanhnhan1512/my-portfolio.git
+cd my-portfolio
+npm install
+cp .env.example .env.local
+# Edit .env.local with your EmailJS credentials
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` file based on `.env.example`:
 
-## Learn More
+| Variable | Description |
+|----------|-------------|
+| `NEXT_PUBLIC_EMAILJS_SERVICE_ID` | EmailJS service ID |
+| `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID` | EmailJS template ID |
+| `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY` | EmailJS public key |
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+  app/            # Next.js app router pages
+  components/
+    sections/     # Page sections (Hero, About, Skills, etc.)
+    three/        # React Three Fiber 3D components
+    ui/           # Reusable UI components
+    providers/    # Context providers (Lenis, etc.)
+  hooks/          # Custom React hooks
+  lib/            # Utilities and constants
+  types/          # TypeScript definitions
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+Deployed on [Vercel](https://vercel.com). Push to `main` triggers auto-deploy.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
